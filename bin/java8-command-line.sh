@@ -2,6 +2,9 @@
 
 set -e
 
+PROJECT_DIR=$(dirname "$0")
+cd ${PROJECT_DIR}/.. 
+
 echo '###############################################################'
 echo '$ rm -rf mytarget/ && mkdir -p mytarget/classes'
 echo '###############################################################'
