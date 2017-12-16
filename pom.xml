@@ -32,6 +32,27 @@
     <jacoco.version>0.7.2.201409121644</jacoco.version>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>http://repo1.maven.org/maven2</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>  
+    <repository>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>bintray-isabiq-maven-repo</id>
+      <name>bintray</name>
+      <url>https://dl.bintray.com/isabiq/maven-repo</url>
+    </repository>
+  </repositories>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
