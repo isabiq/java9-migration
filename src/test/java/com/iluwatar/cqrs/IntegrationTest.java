@@ -31,12 +31,12 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.iluwatar.cqrs.commandes.CommandServiceImpl;
+import com.iluwatar.cqrs.commandes.impl.CommandServiceImpl;
 import com.iluwatar.cqrs.commandes.ICommandService;
 import com.iluwatar.cqrs.dto.Author;
 import com.iluwatar.cqrs.dto.Book;
 import com.iluwatar.cqrs.queries.IQueryService;
-import com.iluwatar.cqrs.queries.QueryServiceImpl;
+import com.iluwatar.cqrs.queries.impl.QueryServiceImpl;
 
 /**
  * Integration test of IQueryService and ICommandService with h2 data

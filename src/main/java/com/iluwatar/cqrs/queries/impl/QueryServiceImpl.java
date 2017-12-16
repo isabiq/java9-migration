@@ -20,8 +20,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.iluwatar.cqrs.queries;
+package com.iluwatar.cqrs.queries.impl;
 
+import com.iluwatar.cqrs.queries.IQueryService;
 import java.math.BigInteger;
 import java.util.List;
 

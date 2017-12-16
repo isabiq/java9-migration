@@ -28,12 +28,12 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.iluwatar.cqrs.commandes.CommandServiceImpl;
+import com.iluwatar.cqrs.commandes.impl.CommandServiceImpl;
 import com.iluwatar.cqrs.commandes.ICommandService;
 import com.iluwatar.cqrs.dto.Author;
 import com.iluwatar.cqrs.dto.Book;
 import com.iluwatar.cqrs.queries.IQueryService;
-import com.iluwatar.cqrs.queries.QueryServiceImpl;
+import com.iluwatar.cqrs.queries.impl.QueryServiceImpl;
 import com.iluwatar.cqrs.util.HibernateUtil;
 
 /**
