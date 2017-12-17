@@ -3,6 +3,7 @@ module com.iluwatar.cqrs {
     requires slf4j.api;
     requires hibernate.core;
     requires java.naming;
+    requires javassist;
 
     exports com.iluwatar.cqrs.commandes;
     exports com.iluwatar.cqrs.dto;
