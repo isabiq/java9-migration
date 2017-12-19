@@ -5,6 +5,16 @@ module com.iluwatar.cqrs {
     requires java.naming;
     requires javassist;
     requires java.sql;
+    requires activation;
+    requires antlr;
+    requires dom4j;
+    requires h2;
+    requires hibernate.commons.annotations;
+    requires jandex;
+    requires jaxb.api;
+    requires jboss.logging;
+    requires logback.classic;
+    requires logback.core;
 
     exports com.iluwatar.cqrs.commandes;
     exports com.iluwatar.cqrs.dto;

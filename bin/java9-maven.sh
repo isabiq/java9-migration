@@ -19,31 +19,28 @@ mvn dependency:copy-dependencies -DoutputDirectory=target/lib
 
 
 echo '###############################################################'
-echo '$ mkdir target/lib-direct && \
-        mv target/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar \
-           target/lib/hibernate-core-5.0.1.Final.jar \
-	   target/lib/slf4j-api-1.7.21.jar \
-	   target/lib/javassist-3.18.1-GA.jar \
-	   target/lib-direct'
+echo '$ mkdir target/patch-modules \
+           mv target/lib/jaxb-runtime-2.3.0.jar target/lib/geronimo-jta_1.1_spec-1.1.1.jar target/patch-modules/'
 echo '###############################################################'
-mkdir target/lib-direct && \
-mv target/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar \
-   target/lib/hibernate-core-5.0.1.Final.jar \
-   target/lib/slf4j-api-1.7.21.jar \
-   target/lib/javassist-3.18.1-GA.jar \
-   target/lib-direct
-
+mkdir target/patch-modules && \
+  mv target/lib/jaxb-runtime-2.3.0.jar target/lib/geronimo-jta_1.1_spec-1.1.1.jar target/patch-modules/
 
 echo '###############################################################'
-echo '$ java --add-modules java.sql \
-             --add-opens java.base/java.lang=javassist \
-	     -p target/lib-direct:target/cqrs-1.18.0-SNAPSHOT.jar \
-	     -cp "target/lib/*" \
+echo '$ java \
+             --patch-module jaxb.core=target/patch-modules/jaxb-runtime-2.3.0.jar \
+	     --patch-module java.sql=target/patch-modules/geronimo-jta_1.1_spec-1.1.1.jar \
+	     --add-modules jdk.unsupported \
+	     --add-opens java.base/java.lang=javassist \
+	     --add-exports java.sql/javax.transaction=hibernate.core \
+	     -p target/lib:target/cqrs.jar \
 	     -m com.iluwatar.cqrs/com.iluwatar.cqrs.app.App'
 echo '###############################################################'
-java --add-modules java.sql \
+java \
+     --patch-module jaxb.core=target/patch-modules/jaxb-runtime-2.3.0.jar \
+     --patch-module java.sql=target/patch-modules/geronimo-jta_1.1_spec-1.1.1.jar \
+     --add-modules jdk.unsupported \
      --add-opens java.base/java.lang=javassist \
-     -p target/lib-direct:target/cqrs-1.18.0-SNAPSHOT.jar \
-     -cp "target/lib/*" \
+     --add-exports java.sql/javax.transaction=hibernate.core \
+     -p target/lib:target/cqrs-1.18.0-SNAPSHOT.jar \
      -m com.iluwatar.cqrs/com.iluwatar.cqrs.app.App
 

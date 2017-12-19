@@ -21,10 +21,6 @@ echo '###############################################################'
 echo '$ mv mytarget/lib/jaxb-runtime-2.3.0.jar mytarget/lib/geronimo-jta_1.1_spec-1.1.1.jar mytarget/patch-modules/'
 echo '###############################################################'
 mv mytarget/lib/jaxb-runtime-2.3.0.jar mytarget/lib/geronimo-jta_1.1_spec-1.1.1.jar mytarget/patch-modules/
-#   mytarget/lib/hibernate-core-5.0.1.Final.jar \
-#   mytarget/lib/slf4j-api-1.7.21.jar \
-#   mytarget/lib/javassist-3.18.1-GA.jar \
-#   mytarget/lib-direct
 
 
 echo '###############################################################'
@@ -34,8 +30,6 @@ echo '$ javac -d mytarget/classes/ \
       -p mytarget/lib $(find src/main/java -name "*.java")'
 echo '###############################################################'
 javac -d mytarget/classes/ \
-      --patch-module jaxb.core=mytarget/patch-modules/jaxb-runtime-2.3.0.jar \
-      --patch-module java.sql=mytarget/patch-modules/geronimo-jta_1.1_spec-1.1.1.jar \
       -p mytarget/lib $(find src/main/java -name "*.java")
 
 
@@ -69,5 +63,6 @@ java \
      --add-exports java.sql/javax.transaction=hibernate.core \
      -p mytarget/lib:mytarget/cqrs.jar \
      -m com.iluwatar.cqrs/com.iluwatar.cqrs.app.App
+
      
 
