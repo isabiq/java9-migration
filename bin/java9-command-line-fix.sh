@@ -6,9 +6,9 @@ PROJECT_DIR=$(dirname "$0")
 cd ${PROJECT_DIR}/.. 
 
 
-if [ ! -z "$(grep javassist src/main/java/module-info.java)" ];then
+if [ ! -z "$(grep -P "^\s*requires\s+javassist" src/main/java/module-info.java)" ];then
 
-    echo 'Remove javassist module from module-info to run this script !'
+    echo 'Remove or comment javassist module from module-info to run this script !'
     exit 1
 	
 fi
