@@ -38,7 +38,7 @@ jar cf mytarget/cqrs.jar -C mytarget/classes .
 echo '###############################################################'
 echo '$ java -cp "mytarget/lib/*":mytarget/cqrs.jar com.iluwatar.cqrs.app.App'
 echo '###############################################################'
-java --add-modules java.xml.bind -cp "mytarget/lib/*":mytarget/cqrs.jar com.iluwatar.cqrs.app.App
+java -cp "mytarget/lib/*":mytarget/cqrs.jar com.iluwatar.cqrs.app.App
 
 # If you didn't add the jaxb to the dependencies you can use --add-modules to add java.xml.bind to the root modules: 
 #java --add-modules java.xml.bind -cp "mytarget/lib/*":mytarget/cqrs.jar com.iluwatar.cqrs.app.App
