@@ -12,12 +12,7 @@ mvn clean verify
 
 
 echo '###############################################################'
-echo '$ mvn dependency:copy-dependencies -DoutputDirectory=target/lib'
+echo '$ mvn exec:exec -Dexec.executable="java"  -Dexec.args="-cp %classpath com.iluwatar.cqrs.app.App"'
 echo '###############################################################'
-mvn dependency:copy-dependencies -DoutputDirectory=target/lib
+mvn exec:exec -Dexec.executable="java"  -Dexec.args="-cp %classpath com.iluwatar.cqrs.app.App"
 
-
-echo '###############################################################'
-echo '$ java -cp target/lib/*:target/cqrs-1.18.0-SNAPSHOT.jar com.iluwatar.cqrs.app.App'
-echo '###############################################################'
-java -cp target/lib/*:target/cqrs-1.18.0-SNAPSHOT.jar com.iluwatar.cqrs.app.App
