@@ -139,6 +139,18 @@
           <release>9</release>
         </configuration>
       </plugin>
+      <plugin> 
+        <groupId>org.apache.maven.plugins</groupId> 
+	<artifactId>maven-jar-plugin</artifactId> 
+	<version>3.0.2</version>
+	<configuration>  
+	  <archive> 
+	    <manifestEntries>   
+	      <Automatic-Module-Name>com.iluwatar.cqrs</Automatic-Module-Name>    
+	    </manifestEntries>   
+	  </archive> 
+	</configuration>
+      </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
