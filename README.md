@@ -10,7 +10,7 @@ There are four branchs in this repository:
 * [java9-module-v1](//github.com/isabiq/java9-migration/tree/java9-module-v1) : cqrs and its direct dependencies running as a module under java 9.
 * [java9-module-v2](//github.com/isabiq/java9-migration/tree/java9-module-v2) : cqrs and its dependencies running as a module under java 9.
 
-In each branch you'll find at least three scripts in the bin directory. Each script compiles and runs the application using a different way. One using the command line, the other using maven and the third as a docker image. 
+In each branch you'll find at least three scripts in the bin directory. Each script compiles and runs the application using a different way. One using the command line, the other using maven and the third as a docker image. You'll find also in the java 9 branchs a script which uses jlink to generate a dependency report and the module-info in the temp/ directory.
 
 
 ### Environment
@@ -22,7 +22,7 @@ In each branch you'll find at least three scripts in the bin directory. Each scr
 * docker 17.09.1-ce (optional: if you want to run CQRS as docker container)
 
 
-Notice that for this master branch you'll need to configure JAVA_HOME for java 8. For the other branchs you'll need to switch to java 9.
+Notice that for the master branch you'll need to configure JAVA_HOME for java 8. For the other branchs you'll need to switch to java 9.
 
 ### References
 
