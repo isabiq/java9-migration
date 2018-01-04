@@ -1,14 +1,14 @@
 
 # Java 9 migration demo
 
-This repository is pratical demonstration of a java 8 application migration to java 9. The application used in this demonstration is an implementation of the CQRS pattern taken from [java-design-patterns](https://github.com/iluwatar/java-design-patterns).
+This repository is practical demonstration of a java 8 application migration to java 9. The application used in this demonstration is an implementation of the CQRS pattern taken from [java-design-patterns](https://github.com/iluwatar/java-design-patterns).
 
 There are four branchs in this repository:
 
 * [master](https://github.com/isabiq/java9-migration/tree/master) : cqrs application as extracted from java-design-patterns running under java 8.
 * [java9-classpath](//github.com/isabiq/java9-migration/tree/java9-classpath) : cqrs running under java 9 in the classpath (the unamed module).
-* [java9-module-v1](//github.com/isabiq/java9-migration/tree/java9-module-v1) : cqrs and its direct dependencies running as a module under java 9.
-* [java9-module-v2](//github.com/isabiq/java9-migration/tree/java9-module-v2) : cqrs and its dependencies running as a module under java 9.
+* [java9-module-v1](//github.com/isabiq/java9-migration/tree/java9-module-v1) : cqrs and its direct dependencies running as modules.
+* [java9-module-v2](//github.com/isabiq/java9-migration/tree/java9-module-v2) : cqrs and its dependencies running as modules.
 
 In each branch you'll find at least three scripts in the bin directory. Each script compiles and runs the application using a different way. One using the command line, the other using maven and the third as a docker image. You'll find also in the java 9 branchs a script which uses jlink to generate a dependency report and the module-info in the temp/ directory.
 
