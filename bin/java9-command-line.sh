@@ -30,6 +30,8 @@ echo '$ javac -d mytarget/classes/ \
       -p mytarget/lib $(find src/main/java -name "*.java")'
 echo '###############################################################'
 javac -d mytarget/classes/ \
+      --patch-module jaxb.core=mytarget/patch-modules/jaxb-runtime-2.3.0.jar \
+      --patch-module java.sql=mytarget/patch-modules/geronimo-jta_1.1_spec-1.1.1.jar \
       -p mytarget/lib $(find src/main/java -name "*.java")
 
 
