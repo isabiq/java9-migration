@@ -12,6 +12,7 @@ There are four branchs in this repository:
 
 In each branch you'll find at least three scripts in the bin directory. Each script compiles and runs the application using a different way. One using the command line, the other using maven and the third as a docker image. You'll find also in the java 9 branchs a script which uses jlink to generate a dependency report and the module-info in the temp/ directory.
 
+Detailed steps can be found at : [A Practical Guide to Java 9 Migration](https://dzone.com/articles/a-practical-guide-to-java-9-migration)
 
 ### Environment
 
