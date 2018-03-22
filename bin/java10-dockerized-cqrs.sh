@@ -3,14 +3,14 @@
 set -e
 
 PROJECT_DIR=$(dirname "$0")
-DOCKER_IMAGE_TAG=1.0-java9-cp
+DOCKER_IMAGE_TAG=1.0-java10-cp
 
 cd ${PROJECT_DIR}/.. 
 
 echo '###############################################################'
-echo '$ bin/java9-command-line.sh'
+echo '$ bin/java10-command-line.sh'
 echo '###############################################################'
-bin/java9-command-line.sh
+bin/java10-command-line.sh
 
 pwd
 echo '###############################################################'
@@ -30,6 +30,6 @@ sudo docker build -t cqrs:${DOCKER_IMAGE_TAG} .
 
 
 echo '###############################################################'
-echo "\$ sudo docker run --rm -t --name cqrs-java9-cp cqrs:${DOCKER_IMAGE_TAG}"
+echo "\$ sudo docker run --rm -t --name cqrs-java10-cp cqrs:${DOCKER_IMAGE_TAG}"
 echo '###############################################################'
-sudo docker run --rm -t --name cqrs-java9-cp cqrs:${DOCKER_IMAGE_TAG}
+sudo docker run --rm -t --name cqrs-java10-cp cqrs:${DOCKER_IMAGE_TAG}
