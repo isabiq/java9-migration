@@ -22,16 +22,11 @@
  */
 package com.iluwatar.cqrs.app;
 
-import java.math.BigInteger;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.iluwatar.cqrs.commandes.impl.CommandServiceImpl;
 import com.iluwatar.cqrs.commandes.ICommandService;
-import com.iluwatar.cqrs.dto.Author;
-import com.iluwatar.cqrs.dto.Book;
 import com.iluwatar.cqrs.queries.IQueryService;
 import com.iluwatar.cqrs.queries.impl.QueryServiceImpl;
 import com.iluwatar.cqrs.util.HibernateUtil;
@@ -75,12 +70,12 @@ public class App {
     IQueryService queries = new QueryServiceImpl();
 
     // Query the database using QueryService
-    Author nullAuthor = queries.getAuthorByUsername("username");
-    Author eEvans = queries.getAuthorByUsername("eEvans");
-    BigInteger jBlochBooksCount = queries.getAuthorBooksCount("jBloch");
-    BigInteger authorsCount = queries.getAuthorsCount();
-    Book dddBook = queries.getBook("Domain-Driven Design");
-    List<Book> jBlochBooks = queries.getAuthorBooks("jBloch");
+    var nullAuthor = queries.getAuthorByUsername("username");
+    var eEvans = queries.getAuthorByUsername("eEvans");
+    var jBlochBooksCount = queries.getAuthorBooksCount("jBloch");
+    var authorsCount = queries.getAuthorsCount();
+    var dddBook = queries.getBook("Domain-Driven Design");
+    var jBlochBooks = queries.getAuthorBooks("jBloch");
 
     LOGGER.info("Author username : {}", nullAuthor);
     LOGGER.info("Author eEvans : {}", eEvans);
