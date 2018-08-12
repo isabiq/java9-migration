@@ -28,7 +28,7 @@
     <hibernate.version>5.0.1.Final</hibernate.version>
     <slf4j.version>1.7.21</slf4j.version>
     <logback.version>1.1.7</logback.version>
-    <compiler.version>3.7.0</compiler.version>
+    <compiler.version>3.8.0</compiler.version>
     <jacoco.version>0.8.1</jacoco.version>
   </properties>
 
